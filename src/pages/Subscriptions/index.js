@@ -45,7 +45,6 @@ function Subscriptions({ isFocused }) {
   }, [isFocused]);
 
   async function handleUnsubscribe({ meetup_id }) {
-    console.tron.warn(meetups);
     await api.delete(`subscriptions/${meetup_id}`).catch(error => {
       if (error.response) {
         // The request was made and the server responded with a status code

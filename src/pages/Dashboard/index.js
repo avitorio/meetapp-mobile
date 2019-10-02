@@ -77,7 +77,6 @@ function Dashboard({ isFocused }) {
   }
 
   useEffect(() => {
-    console.tron.warn(isFocused);
     if (isFocused) {
       loadMeetups(requestDate, page);
     } else {
@@ -86,7 +85,6 @@ function Dashboard({ isFocused }) {
   }, [isFocused, page, requestDate]);
 
   async function handleRSVP({ id, subscribed }) {
-    console.tron.warn(subscribed);
     if (!subscribed) {
       const response = await api
         .post('subscriptions', { meetup_id: id })
